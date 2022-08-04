@@ -747,6 +747,7 @@ padding-left:20px;
 }
 
 .slides_box {
+    margin-right: 20px;
     position: relative;
     width: 100%;
 }
@@ -818,6 +819,7 @@ padding-left:20px;
 .ourBestswiper {
     margin-top: 60px;
 }
+
 
 /* ================== Start Our Best Relevent Collection ============= */
 

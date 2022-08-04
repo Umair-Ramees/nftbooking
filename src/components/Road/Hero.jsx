@@ -15,7 +15,7 @@ export default function Hero() {
                     <div className="carousel-item" data-step="3">
                       <img className="d-block w-100" src="assets/images/NFT_img.webp" alt="Third slide" />
                     </div>
-              <div className="carousel-item" data-step="4">
+                    <div className="carousel-item" data-step="4">
                       <img className="d-block w-100" src="assets/images/NFT_img.webp" alt="Forth slide" />
                     </div>
                   </div>

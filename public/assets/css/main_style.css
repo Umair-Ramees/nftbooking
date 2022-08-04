@@ -736,6 +736,7 @@ padding-left:20px;
 }
 
 .slides_box {
+    padding-right: 30px;
     position: relative;
     width: 100%;
 }

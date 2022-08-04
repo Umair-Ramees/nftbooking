@@ -19,16 +19,16 @@ export default function HeroSection() {
                         <div className="tour_liser">
                             <div className="row">
                                 <div className="col-4 col-md-4 col-sm-4 col-lg-4 col-xl-4" data-aos="fade-up" data-aos-duration="1000">
-                                    <h3 className="tour_slider_title"><span className="counting" data-count="200">0</span>+</h3>
+                                    <h3 className="tour_slider_title"><span className="counting" data-count="200">200</span>+</h3>
                                     <p className="tour_slide_desc"> Tours</p>
                                 </div>
                                 <div className="col-4 col-md-4 col-sm-4 col-lg-4 col-xl-4"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                                    <h3 className="tour_slider_title"><span className="counting" data-count="20">0</span>k</h3>
+                                    <h3 className="tour_slider_title"><span className="counting" data-count="20">20</span>k</h3>
                                     <p className="tour_slide_desc"> Bidings Listing</p>
                                 </div>
 
                                 <div className="col-4 col-md-4 col-sm-4 col-lg-4 col-xl-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="350">
-                                    <h3 className="tour_slider_title"><span className="counting" data-count="1000">0</span>+</h3>
+                                    <h3 className="tour_slider_title"><span className="counting" data-count="1000">1000</span>+</h3>
                                     <p className="tour_slide_desc">Growing Artists</p>
                                 </div>
                             </div>
