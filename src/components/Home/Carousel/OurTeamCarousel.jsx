@@ -4,8 +4,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Slide from "./TeamSlide";
 
-
-
 const responsive = {
   // superLargeDesktop: {
   //   // the naming can be any, depends on you.
@@ -26,22 +24,37 @@ const responsive = {
   }
 };
 
-const CustomRightArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType }
-    } = rest;
-    // onMove means if dragging or swiping in progress.
-    return <button onClick={() => onClick()} />;
+const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const { carouselState: { currentSlide } } = rest;
+    return (
+        // <div className="carousel-button-group">
+        //     <div className="row">
+        //         <div className="col-md-7 pr-lg-0">
+        //             <h1 className="our_whitepapper_title" data-aos="fade-up" data-aos-duration="1000">
+        //                 Our Team
+        //             </h1>
+        //             <p className="white_papper_dec" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+        //                 We have Best Team for Working on NFT with Travelling you can contact with him thought social media also:
+        //             </p>
+        //         </div>
+        //         <div className="col-md-5">
+        //             <div className="team_navigaation">
+        //                 <div className="swiper-button-prevteam"><i className="fa-solid fa-chevron-left" onClick={() => previous()}></i></div>
+        //                 <div className="swiper-button-nexteam"><i className="fa-solid fa-chevron-right" onClick={() => next()}></i></div>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>
+      <div className="carousel-button-group"> 
+        <div className="swiper-button-prevteam"><i className="fa-solid fa-chevron-left" onClick={() => previous()}></i></div>
+        <div className="swiper-button-nexteam"><i className="fa-solid fa-chevron-right" onClick={() => next()}></i></div>
+
+        {/* <ButtonOne className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
+        <ButtonTwo onClick={() => next()} />
+        <ButtonThree onClick={() => goToSlide(currentSlide + 1)}> Go to any slide </ButtonThree> */}
+      </div>
+    );
   };
-const CustomLeftArrow = ({ onClick, ...rest }) => {
-    const {
-        onMove,
-        carouselState: { currentSlide, deviceType }
-    } = rest;
-    // onMove means if dragging or swiping in progress.
-    return <button onClick={() => onClick()} />;
-};
 
 export default function OurTeamCarousel() {
     const teams = [
@@ -55,7 +68,7 @@ export default function OurTeamCarousel() {
         {name: "Bamise Oluwaseun", role: "Social Media Manager", img: "assets/images/team/Bamise Oluwaseun.jpg"},
     ]
     return <>
-        <div className="row">
+        {/* <div className="row">
             <div className="col-md-7 pr-lg-0">
                 <h1 className="our_whitepapper_title" data-aos="fade-up" data-aos-duration="1000">
                     Our Team
@@ -70,11 +83,11 @@ export default function OurTeamCarousel() {
                     <div className="swiper-button-nexteam"><i className="fa-solid fa-chevron-right"></i></div>
                 </div>
             </div>
-        </div>
+        </div> */}
         <Carousel
-            customLeftArrow={<CustomLeftArrow />}
-            customRightArrow={<CustomRightArrow />}
             responsive={responsive}
+            renderButtonGroupOutside={true} 
+            customButtonGroup={<ButtonGroup />}
         >
             {/* <Slide img="assets/images/team/Team-01.webp" name="Danilo" role="CEO"/> */}
             {teams.map((team) =>
