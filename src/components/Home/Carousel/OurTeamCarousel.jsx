@@ -24,8 +24,8 @@ const responsive = {
   }
 };
 
-const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-    const { carouselState: { currentSlide } } = rest;
+const ButtonGroup = ({ next, previous}) => {
+    // const { carouselState: { currentSlide } } = rest;
     return (
         // <div className="carousel-button-group">
         //     <div className="row">
@@ -37,21 +37,34 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
         //                 We have Best Team for Working on NFT with Travelling you can contact with him thought social media also:
         //             </p>
         //         </div>
-        //         <div className="col-md-5">
-        //             <div className="team_navigaation">
-        //                 <div className="swiper-button-prevteam"><i className="fa-solid fa-chevron-left" onClick={() => previous()}></i></div>
-        //                 <div className="swiper-button-nexteam"><i className="fa-solid fa-chevron-right" onClick={() => next()}></i></div>
-        //             </div>
+        // //         <div className="col-md-5">
+                    // <div className="team_navigaation">
+                      // <div className="swiper-button-prevteam"><i className="fa-solid fa-chevron-left" onClick={() => previous()}></i></div>
+                      // <div className="swiper-button-nexteam"><i className="fa-solid fa-chevron-right" onClick={() => next()}></i></div>
+                    // </div>
         //         </div>
         //     </div>
         // </div>
       <div className="carousel-button-group"> 
-        <div className="swiper-button-prevteam"><i className="fa-solid fa-chevron-left" onClick={() => previous()}></i></div>
-        <div className="swiper-button-nexteam"><i className="fa-solid fa-chevron-right" onClick={() => next()}></i></div>
-
-        {/* <ButtonOne className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
-        <ButtonTwo onClick={() => next()} />
-        <ButtonThree onClick={() => goToSlide(currentSlide + 1)}> Go to any slide </ButtonThree> */}
+        <div className="row">
+          <div className="col-md-7 pr-lg-0">
+              <h1 className="our_whitepapper_title" data-aos="fade-up" data-aos-duration="1000">
+                  Our Team
+              </h1>
+              <p className="white_papper_dec" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                  We have Best Team for Working on NFT with Travelling you can contact with him thought social media also:
+              </p>
+          </div>
+          <div className="col-md-5">
+            <div className="team_navigaation">
+              <div className="swiper-button-prevteam"><i className="fa-solid fa-chevron-left" onClick={() => previous()}></i></div>
+              <div className="swiper-button-nexteam"><i className="fa-solid fa-chevron-right" onClick={() => next()}></i></div>
+            </div>
+          </div>
+          {/* <ButtonOne className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
+          <ButtonTwo onClick={() => next()} />
+          <ButtonThree onClick={() => goToSlide(currentSlide + 1)}> Go to any slide </ButtonThree> */}
+        </div>
       </div>
     );
   };
@@ -85,9 +98,12 @@ export default function OurTeamCarousel() {
             </div>
         </div> */}
         <Carousel
-            responsive={responsive}
             renderButtonGroupOutside={true} 
             customButtonGroup={<ButtonGroup />}
+            responsive={responsive}
+            removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+            
+            // customButtonGroup={<ButtonGroup />}
         >
             {/* <Slide img="assets/images/team/Team-01.webp" name="Danilo" role="CEO"/> */}
             {teams.map((team) =>
