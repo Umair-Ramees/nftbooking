@@ -23,16 +23,28 @@ const responsive = {
   }
 };
 
-// const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-//   const { carouselState: { currentSlide } } = rest;
-//   return (
-//     <div className="carousel-button-group"> // remember to give it position:absolute
-//       {/* <ButtonOne className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
-//       <ButtonTwo onClick={() => next()} />
-//       <ButtonThree onClick={() => goToSlide(currentSlide + 1)}> Go to any slide </ButtonThree> */}
-//     </div>
-//   );
-// };
+const ButtonGroup = ({ next, previous}) => {
+  return (
+    <div className="carousel-button-group">
+      <div className="row">
+        <div className="col-md-10 pr-lg-0">
+            <h1 className="our_best_title"data-aos="fade-up" data-aos-duration="1000">
+                Our Best NFT Collections
+            </h1>
+            <p className="our_best_desc" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+            </p>
+        </div>
+        <div className="col-md-2">                
+            <div className="our_navigaation">
+                <div className="swiper-button-prevour" onClick={() => previous()} ><i className="fa-solid fa-chevron-left"></i></div>
+                <div className="swiper-button-nextour" onClick={() => next()} ><i className="fa-solid fa-chevron-right"></i></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 
 export default function LoungeCollection() {
@@ -42,10 +54,15 @@ export default function LoungeCollection() {
         {src:"assets/images/Tour_Travelings_California_2.webp"},
     ]
     return <>
-        <Carousel responsive={responsive}>
-            {tours.map((tour) =>
-                <LoungeSlide src={tour.src} />
-            )}
+        <Carousel             
+          renderButtonGroupOutside={true} 
+          customButtonGroup={<ButtonGroup />}
+          responsive={responsive}
+          removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+        >
+          {tours.map((tour) =>
+              <LoungeSlide src={tour.src} />
+          )}
         </Carousel>;
     </>
 }

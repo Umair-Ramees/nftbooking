@@ -57,8 +57,8 @@ const ButtonGroup = ({ next, previous}) => {
           </div>
           <div className="col-md-5">
             <div className="team_navigaation">
-              <div className="swiper-button-prevteam"><i className="fa-solid fa-chevron-left" onClick={() => previous()}></i></div>
-              <div className="swiper-button-nexteam"><i className="fa-solid fa-chevron-right" onClick={() => next()}></i></div>
+              <div className="swiper-button-prevteam" onClick={() => previous()}><i className="fa-solid fa-chevron-left" ></i></div>
+              <div className="swiper-button-nexteam" onClick={() => next()}><i className="fa-solid fa-chevron-right" ></i></div>
             </div>
           </div>
           {/* <ButtonOne className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />

@@ -95,6 +95,8 @@ li.nav-item:nth-last-child(1){
 @media(min-width:992px){
     .container {
         max-width: 1170px !important;
+        display: flex;
+        flex-direction: column-reverse;
     }
 }
 section.hero_section {
