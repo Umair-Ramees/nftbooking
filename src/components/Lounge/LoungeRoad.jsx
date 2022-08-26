@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function LoungePage() {
+export default function LoungePage() { 
     return <>
         <section className="NFTlounge_collection_road">
             <div className="container view_container">
