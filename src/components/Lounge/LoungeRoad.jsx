@@ -5,7 +5,7 @@ export default function LoungePage() {
         <section className="NFTlounge_collection_road">
             <div className="container view_container">
             
-                <div className="row">
+                <div className="row"> 
                     <div className="col-md-8" data-aos="fade-up" data-aos-duration="1000">
                         <h3 className="sub_title">Roadmap</h3>
                         <h1 className="titleNFT" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">NFT Lounge Collection Roadmap</h1>
